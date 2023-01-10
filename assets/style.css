@@ -1,0 +1,430 @@
+/* BODY CSS START */
+* {
+  box-sizing: border-box;
+	
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+
+}
+
+/* BODY CSS END */
+
+/* HEADER CSS START */
+.header {
+   padding: 80px;
+  text-align: center;
+
+    background-image: linear-gradient(to right bottom, #156b65, #006367, #005b67, #005365, #004b62, #004960, #00485f, #00465d, #004b5c, #004f5a, #005356, #075651);
+  
+  text-shadow: #002042 0 0 20px;
+
+  color: #ffffff !important;
+  
+
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+	animation: slicktitle 1s ease 0s 1 normal both;
+  font-size: 40px;
+}
+
+.header p {
+	animation: slicktitledescription 1s ease 1s 1 normal both;
+  pointer-events: none; /* make sure it doesn't temporarially break navigation */
+}
+ 
+@keyframes slicktitle {
+	0% {
+		opacity: 0;
+		transform: rotate(-540deg) scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotate(0) scale(1);
+	}
+}
+
+
+@keyframes slicktitledescription {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* HEADER CSS END */
+
+/* NAVBAR CSS START */
+.navbar {
+  overflow: hidden;
+/*  background-color: #333;*/
+  background-color: #373d48;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+/*   background-color: #ddd; */
+  background-color: #555d6d;
+  
+/*   color: black; */
+}
+
+
+
+/* NAVBAR CSS END */
+
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #4B8077;
+  width: 100%;
+  padding: 20px;
+	overflow: auto;
+}
+
+.extrabuttons {
+  background-color: #454545;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 100%;
+  padding: 20px;
+	overflow: auto;
+}
+
+/* visitor counter */
+.visitcounter {
+	width: fit-content;
+/* 	padding: 1%; */
+  border-radius: 5px;
+  padding: 7px;
+	margin: 0;
+		border: 5px solid #0065a3;
+}
+
+.visitcounter > h3 {
+  margin: 0px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.phonealert {
+	display: none;
+}
+
+/* RESPONSIVE CSS START */
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+	}
+	.phonealert {
+		display: inline;
+	}
+}
+
+/* RESPONSIVE CSS END */
+
+
+	 .content header{
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 border-bottom: thin solid #e4e4e4;
+	 padding-bottom: 30px;
+ }
+
+.content main{
+	margin-top: 50px;
+	
+}
+
+form, .content{
+	max-width: 500px;
+/* 	max-width: 60%; */
+	min-height: 500px;
+	margin: 100px auto;
+	padding: 40px 30px;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+	background-color: #282c34;
+}
+
+form select{
+	display: block;
+	width:  100%;
+	margin-bottom: 10px;
+	padding: 10px;
+	font-size: 16px;
+	border:  thin solid #e4e4e4;
+	background-color: white;
+	color: #555;
+}
+
+	
+button a:hover {
+  background-color: #ddd;
+  color: white;
+}
+button {
+	float: left;
+  display: block;
+  font-size: 18px;
+/*   color: #333; */
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.indev {
+	  text-align: center;
+	  text-decoration: none;
+		color: orange;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+a {
+  color: mediumaquamarine;
+}
+
+
+/* TABLE CSS START */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+/*   width: fit-content; */
+	table-layout: fixed;
+}
+
+td, th {
+  border: 1px solid #181a1f;
+  text-align: left;
+  padding: 8px;
+	word-break: break-all;
+}
+
+tr:nth-child(even) {
+  background-color: #383e47;
+}
+
+td:nth-child(3) {
+  padding: 0px;
+}
+td > .button {
+  width: 100%;
+  margin: 0px;
+  border: none;
+  border-radius: 0;
+  height: 100%;
+}
+
+/* TABLE CSS END */
+
+
+/* DISABLED LINKS CSS START */
+.isDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.isDisabled > a {
+  color: currentColor;
+  display: inline-block;  /* For IE11/ MS Edge bug */
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* DISABLED LINKS CSS END */
+
+
+/* Stuff copy-pasted (and then edited by @slmj) from a project by @slmj, with colors based off of Atom */
+
+*:not(.header>*) {
+  font-family: Arial, Helvetica, sans-serif;
+/*   color: #dedede; */
+    color: #abb2bf;
+/*     color: #ceebee */
+}
+
+body {
+  padding: 20px;
+/*   background-color: #02021d; */
+/*     background-color: #21252b; */
+  	background-image: radial-gradient(circle, #031211, #05405c, #02638d, #057894, #00a7bd);
+
+}
+
+.button {
+  cursor: pointer;
+/*   background-color: #e1e0e0; */
+/*     background-color: #21252b;
+    */
+
+    border: 1px solid #181a1f;
+    background-color: #353b45;
+   margin: 5px;
+  transition-duration: 0.1s;
+}
+
+input {
+/*   color: black; */
+/*     color: #9da5b4; */
+
+
+}
+
+
+main, .side, .main {
+    padding: 20px;
+    border: 1px solid #181a1f;
+    background-color: #282c34;
+    color: #abb2bf;
+}
+
+#submit {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+  border: none;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #3f4550;
+}
+
+.button:active {
+  background-color: #726c84;
+}
+
+
+input:focus, .button:focus {
+    outline: 3px solid #4d78cc;
+}
+/* very terrible styling: */
+marquee > p, marquee > i { 
+  color: black;
+}
+
+
+
+
+
+/* Modal popup thing :/ */
+
+/* The Modal (background) */
+.hiddenlogin {
+  display: none; /* Hidden by default */
+	overflow: auto; 
+  
+  width: 75%; /* Full width */
+  height: 75%; /* Full height */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding: 50px;
+}
+
+iframe.fullScreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+		z-index: 9999;
+		padding: 0%;
+	
+}
+
+::placeholder {
+   text-align: center; 
+}

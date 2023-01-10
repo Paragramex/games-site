@@ -1,0 +1,18 @@
+<?php 
+$path = $_SERVER['DOCUMENT_ROOT'];
+require_once($path.'/system/head.php');
+	?>
+  <div class="main">
+<div class="content">
+		<header>
+TITLE HERE
+			</header>
+		<main>
+			CONTENT HERE
+		</main>
+</div>
+</div>
+</div>
+
+<?php require_once($path.'/system/foot.php');  ?>
+
