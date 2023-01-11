@@ -1,4 +1,4 @@
-<?php 
+~<?php 
 $path = $_SERVER['DOCUMENT_ROOT'];
 require_once($path.'/system/head.php');
 ?>
@@ -14,8 +14,8 @@ require_once($path.'/system/head.php');
 			echo htmlspecialchars_decode($name->disclaimer);
 		} ?></p>
 
-    <a href="https://minekhan.thingmaker.repl.co/"><button class="extrabuttons button">Login to an Account</button></a>
-    <a href="/login.php"><button class="extrabuttons button">Register an Account</button></a>
+    <a href="/register.php"><button class="extrabuttons button">Register an Account</button></a>
+    <a href="/login.php"><button class="extrabuttons button">Login to an Account</button></a>
   </div>
   <div class="main">
 		<h3>Social Button Maker [WIP]</h3>
@@ -54,14 +54,14 @@ const btn = document.querySelector('#generate');
         const radioButtons = document.querySelectorAll('input[name="perms"]');
         btn.addEventListener("click", () => {
             let selectedSize;
-            for (const radioButton of radioButtons) {
+            for (const radioButton of radioButtons~) {
                 if (radioButton.checked) {
                     selectedSize = radioButton.value;
                     break;
                 }
             }
             // show the output:
-            output.innerText = selectedSize ? `${selectedSize}` : ``;
+            output.innerText = selectedSize ? `${s~electedSize}` : ``;
         });
 
 

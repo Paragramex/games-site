@@ -3,7 +3,7 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 require_once($path.'/system/head.php');
 require_once($path.'/admin/lib.php');
 if(!isset($_SESSION['admin'])){
-		echo "<script>window.location.replace($path'/home.php')</script>";
+		echo "<script>window.location.replace('/home.php')</script>";
 		exit();
 	}
 

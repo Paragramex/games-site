@@ -46,10 +46,10 @@ if ($_GET['permissions'] == "all") {
 	$data = "success=true";
 }
 ?>
-			<a href="<?php echo $refferersite . "ok.php?" . $data ?>"><button class="extrabuttons button">Yes</button></a>
+			<a href="<?php echo "https://" . $refferersite . "/ok.php?" . $data ?>"><button class="extrabuttons button">Yes</button></a>
 				<br>
 				
-    <a href="<?php echo $refferersite . "cancel.php"; ?>"><button class="extrabuttons button extrabuttons">No</button></a>
+    <a href="<?php echo "https://" . $refferersite . "/cancel.php"; ?>"><button class="extrabuttons button extrabuttons">No</button></a>
 			<br>
 			<p>To continue, we will tell the site: </p>
 				<ul style="list-style: none;">

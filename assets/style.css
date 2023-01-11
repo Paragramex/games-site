@@ -428,3 +428,11 @@ iframe.fullScreen {
 ::placeholder {
    text-align: center; 
 }
+
+
+/* upload file btn */
+::-webkit-file-upload-button {
+  background: #4c397f;
+  color: #07e0e4;
+  padding: 1em;
+}

@@ -36,7 +36,10 @@ echo $content; ?></h3></div>
     <br>-->
 <h2>Play the staff pick, NO ACCOUNT NEEDED!</h2>
 <!--<button onclick="makeFullScreen()" class="extrabuttons button">Full Screen</button>-->
-<iframe src="/clients/vanilla.html" id="openframe" style="top:0; left:0; bottom:0; right:0; width:100%; height:71%; border:none; margin:0; padding:1%; overflow:hidden;">
+		<?php if (file_exists($path.'/db/site.json')) {
+			$config = json_decode(file_get_contents($path.'/db/site.json'));
+		} ?>
+<iframe src="<?php echo htmlspecialchars_decode($config->staffpickgame); ?>" id="openframe" style="top:0; left:0; bottom:0; right:0; width:100%; height:71%; border:none; margin:0; padding:1%; overflow:hidden;">
     Your browser doesn't support iframes, sorry but your computer wont even run this site. maybe go get another computer
 </iframe>
 		<br>

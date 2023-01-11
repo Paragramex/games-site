@@ -9,20 +9,6 @@ if(!isset($_SESSION['notbot'])){
 	}
 }
 
-//if refferer is set
-if (!isset(($_SERVER['HTTP_REFERER']))){
-	
- $ref = $_SERVER['HTTP_REFERER'];
-	
-	//if referer does not contain paragram
-	
-	if (strpos($ref, 'paragram') === false) {
-		
-		if (!isset($_COOKIE['passpopupyes'])) {
-echo "<script>window.location.replace('https://classroom.google.com/')</script>";
-exit();
-		}
-}}
 
 
 

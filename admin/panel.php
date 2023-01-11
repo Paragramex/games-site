@@ -125,6 +125,18 @@ if(!isset($_SESSION['admin'])){
 <input type="submit" value="Save"/></td>
 				</form>
 			</tr>
+	<tr>
+		<td> Staff Pick Game</td>
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+		<td><textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' name="favicon" style="display:block;max-width:95%;"><?php 
+	if (isset($config->staffpickgame)) {
+		echo htmlspecialchars($config->staffpickgame);
+	}
+?></textarea>
+<input type="submit" value="Save"/></td>
+				</form>
+			</tr>
 </table>
 </div>
 </div>

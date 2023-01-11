@@ -77,4 +77,11 @@ if (isset($_POST['aboutlogin'])) {
 	}
 
 
+//staff pick game link function
+if (isset($_POST['staffpickgame'])) {
+		$config->sitetitle = $_POST['staffpickgame'];
+		if ($_POST['staffpickgame'] == '') 
+			unset($config->staffpickgame);
+		$status = fwrite(fopen($path.'/db/site.json', 'w+'), json_encode($config));
+	}
 ?>

@@ -22,57 +22,47 @@ if(!isset($_SESSION['user'])){
 			</p>
 		</main>
 				<hr class="rounded">
-				<h3>Client list:</h3>
-				<p>more coming soon...</p>
+				<h3>Games list:</h3>
+				<p>If you want to contribute, a way to do that is coming soon!!!</p>
 <?php
 if(!isset($_COOKIE['verified'])) {
   echo "Verification status is: [false]<br>";
 	echo " [RELOAD PAGE TO RE-VERIFY] <br>";
 } else {
   echo "Verification status is: [" . $_COOKIE['verified'] . "]<br>";
-  echo "You have access to the following clients:";
+  echo "You have access to the following games:";
 } ?>
 				<table>
   <tr>
-    <th>Client</th>
-		<th>Menu Key</th>
+    <th>Game</th>
   </tr>
   <tr>
     <td><a href="/clients/Kerosene.html">Kerosene</a></td>
-		<td><kbd>y</kbd></td>
   </tr>
 	<tr>
     <td><a href="/clients/ayuncraft/index.html">AyunCraft Client</a></td>
-		<td><kbd></kbd></td>
   </tr>
 	<tr>
     <td><a href="/clients/fuchsiaxghostwithaltmanager.html" >Fuchsiax Ghost Client + Alts</a></td>
-		<td><kbd>n</kbd></td>
   </tr>
 		<tr>
     <td><a href="/clients/resentpvp.html">Resent PVP Client</a></td>
-		<td><kbd>K</kbd></td>
   </tr>
 					
 		<tr>
     <td class="isDisabled"><a href="/clients/precisionclientbeta.html" aria-disabled="true">Precision Client BETA</a></td>
-		<td><kbd></kbd></td>
   </tr>
 		<tr>
     <td><a href="/clients/nitclient2.html">NitClient 2.0</a></td>
-		<td><kbd>p</kbd></td>
   </tr>
 		<tr>
     <td><a href="/clients/nitclient.html">NitClient</a></td>
-		<td><kbd>p</kbd></td>
 		</tr>
 	<tr>
     <td><a href="/clients/codercraft.html">Codercraft</a></td>
-		<td><kbd>ALT</kbd></td>
   </tr>
 	<tr>
     <td class="isDisabled"><a href="" aria-disabled="true">Fuchsiax Client</a></td>
-		<td><kbd></kbd></td>
   </tr>
 </table>
 </div>

@@ -1,30 +1,30 @@
 <?php
 define ('SITE_ROOT', realpath(dirname(__FILE__)));
 $path = $_SERVER['DOCUMENT_ROOT'];
-$target_dir = "/uploaded/";
+$target_dir = "../uploaded/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 
 // Check if file already exists
 if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
+  echo "Sorry, file already exists. Click the back button on the URL bar to go back to TrilliumGames home.<br>";
   $uploadOk = 0;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-  echo "Sorry, your file is too large.";
+  echo "Sorry, your file is too large. Click the back button on the URL bar to go back to TrilliumGames home.<br>";
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+  echo "Sorry, your file was not uploaded. Click the back button on the URL bar to go back to TrilliumGames home.<br>";
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    echo "The file: ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). ", has been uploaded. <br> Your link is hosted on <span> <a href='https://math.paragram.repl.co/uploaded/". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). "'>https://math.paragram.repl.co/uploaded/". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). "</a> </span><br>Click the back button on the URL bar to go back to TrilliumGames home.";
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo "Sorry, there was an error uploading your file. Click the back button on the URL bar to go back to TrilliumGames home.<br>";
   }
 }
 ?>
