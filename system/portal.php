@@ -6,6 +6,6 @@ if (isset($_GET['redirect'])){
 						header("location: $decodedredir"); 
 	exit();
 					} else {
-					header("location: account.php"); exit();
+					header("location: /view?page=account"); exit();
 }
 ?>

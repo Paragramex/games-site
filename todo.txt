@@ -1,0 +1,1 @@
+fix files back to main paths or make evrything dynamic: /view?page=<page name here>. if i make pages dynamic then fix social login with button thingy because it uses url params: redirect=aHR0cDovL21hdGgucGFyYWdyYW0ucmVwbC5jby9zeXN0ZW0vYXV0aC5waHA/c2l0ZT1hSFIwY0hNNkx5OWxlR0Z0Y0d4bExtTnZiUzg9JnBlcm1pc3Npb25zPW1haWw=

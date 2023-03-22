@@ -7,16 +7,12 @@ if (!isset($_COOKIE['authed'])){
 	header("Location: /login.php?redirect=$encodedauthlink");
 };
 if (!isset($_GET['site'])){
-		header("Location: /home.php");
+		header("Location: /view?page=home");
 }
 require_once($path.'/system/head.php');
-
 $base64refsite = $_GET['site'];
-
 $refferersite = base64_decode($base64refsite);
-
-
-
+echo $refferersite;
 ?>
 <div class="main">
 <div class="content">
@@ -51,7 +47,7 @@ if ($_GET['permissions'] == "all") {
 				
     <a href="<?php echo "https://" . $refferersite . "/cancel.php"; ?>"><button class="extrabuttons button extrabuttons">No</button></a>
 			<br>
-			<p>To continue, we will tell the site: </p>
+			<p>To continue, we will give the following data to the site: </p>
 				<ul style="list-style: none;">
 					<?php 
 					if (isset($_GET['permissions'])){
@@ -63,7 +59,6 @@ if ($_GET['permissions'] == "all") {
 	echo '[That you logged in, no further data will be shared]';
 } ?>
 				</ul>
-				<p>with the site: <i><?php echo $refferersite ?></i>.
 </p>
 				</center>
 		</main>

@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Offline :(</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>OFFLINE</h1>
+    <h4>Please check your internet connection and try again. </h4>
 
-    <title>Offline</title>
-		<!--stylesheet has to be inline to be cached-->
-    <style>
-      body {
-        font-family: helvetica, arial, sans-serif;
-        margin: 2em;
-      }
-
-      h1 {
-        font-style: italic;
-        color: #373fff;
-      }
-      
-      p {
-        margin-block: 1rem;
-      }
-      
-      button {
-        display: block;
-      }
-    </style>    
-  </head>
-  <body>
-    <h1>You are offline</h1>
-
-    <p>
-      The page will automatically reload once the connection is re-established.
-      Click the button below to try reloading manually.      
-    </p>
-    <button type="button">⤾ Reload</button>
-    
-    <!--js has to be inline to be serverd offline/cached-->
-    <script>
-      document.querySelector('button').addEventListener('click', () => {
-        window.location.reload();
-      });
-    //look for network connection
-      window.addEventListener('online', () => {
-        window.location.reload();
-      });
-
-      //if server is offline
-      async function checkNetworkAndReload() {
-        try {
-          const response = await fetch('.');
-          // Verify we get a valid response from the server
-          if (response.status >= 200 && response.status < 500) {
-            window.location.reload();
-            return;
-          }
-        } catch {
-          // Unable to connect to the server, ignore.
-        }
-        window.setTimeout(checkNetworkAndReload, 2500);
-      }
-
-      checkNetworkAndReload();
-
-    </script>
-  </body>
+    <a href="?amionlinenow" class="button" id="button">RETRY</a>
+  </div>
+	<style>
+		
+  body {
+    width: 100%;
+    min-height: 100vh;
+    display: relative;
+    margin: 0;
+    padding: 0;
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+  }
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  h1 {
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 5px;
+    line-height: 1rem;
+    text-shadow: 0 0 3px white;
+  }
+  h4 {
+    color: #f1f1f1;
+    font-family: arial;
+    font-weight: 300;
+    font-size: 16px;
+  }
+  .button {
+    display: block;
+    margin: 20px 0 0;
+    padding: 15px 30px;
+    background: #22254C;
+    color: white;
+    font-family: arial;
+    letter-spacing: 5px;
+    border-radius: .4rem;
+    text-decoration: none;
+    box-shadow: 0 0 15px #22254C;
+  }
+		</style>
+</body>
 </html>

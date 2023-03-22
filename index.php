@@ -31,7 +31,7 @@ if (isset($_POST['captcha_solution'])) {
 	if ($_SESSION['answer'] === $_POST['captcha_solution']) {
 		echo $messages['success'];
 		$_SESSION['notbot'] = "true";
-		echo "<script>window.location.replace('home.php')</script>";
+		echo "<script>window.location.replace('/view?page=home')</script>";
 		exit();
 	} else {
 		echo $messages['failure'];

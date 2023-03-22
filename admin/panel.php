@@ -129,7 +129,7 @@ if(!isset($_SESSION['admin'])){
 		<td> Staff Pick Game</td>
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-		<td><textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' name="favicon" style="display:block;max-width:95%;"><?php 
+		<td><textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' name="staffpickgame" style="display:block;max-width:95%;"><?php 
 	if (isset($config->staffpickgame)) {
 		echo htmlspecialchars($config->staffpickgame);
 	}

@@ -22,8 +22,8 @@ echo $content; ?></h3></div>
 			echo htmlspecialchars_decode($name->disclaimer);
 		} ?></p>
 
-    <a href="/home.php"><button class="extrabuttons button">Go Home</button></a>
-    <a href="/login.php"><button class="extrabuttons button">View Our Collection</button></a>
+    <a href="/view?page=home"><button class="extrabuttons button">Go Home</button></a>
+    <a href="/view?page=login"><button class="extrabuttons button">View Our Collection</button></a>
   </div>
   <div class="main">
 <h2>Upload a Client</h2>

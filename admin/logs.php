@@ -2,7 +2,7 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 require_once($path.'/system/head.php');
 if(!isset($_SESSION['admin'])){
-		echo "<script>window.location.replace($path'/home.php')</script>";
+		echo "<script>window.location.replace($path'/view?page=home')</script>";
 		exit();
 	}?>
   <div class="main">

@@ -38,9 +38,14 @@ echo $content; ?></h3></div>
 <!--<button onclick="makeFullScreen()" class="extrabuttons button">Full Screen</button>-->
 		<?php if (file_exists($path.'/db/site.json')) {
 			$config = json_decode(file_get_contents($path.'/db/site.json'));
+	$gamelink = htmlspecialchars_decode($config->staffpickgame);
+
+	if ($gamelink == ""){
+		$gamelink = '/view?error=nostaffgame';
+	}
 		} ?>
-<iframe src="<?php echo htmlspecialchars_decode($config->staffpickgame); ?>" id="openframe" style="top:0; left:0; bottom:0; right:0; width:100%; height:71%; border:none; margin:0; padding:1%; overflow:hidden;">
-    Your browser doesn't support iframes, sorry but your computer wont even run this site. maybe go get another computer
+<iframe src="<?php echo $gamelink ?>" id="openframe" style="top:0; left:0; bottom:0; right:0; width:100%; height:71%; border:none; margin:0; padding:1%; overflow:hidden;">
+    Sorry but your computer wont be able to render any of our games. If you see this than maybe enable javascript or go and get a newer computer that can support this site.
 </iframe>
 		<br>
 		    <a href="/login.php"><button class="extrabuttons button">Browse all the clients</button></a>

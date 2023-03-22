@@ -6,5 +6,13 @@
     {
         "username": "Admin",
         "password": "$2y$10$4W9XgmnPpM2WGpB6RDK.4.VPQooWYSLDg7hytnn9zps1UuRdH3HcS"
+    },
+    {
+        "username": "Lolcat",
+        "password": "$2y$10$ExN3VboO1c1lLlhFUV7LD.GTnPML.zfFf.9OWnVrynQcnpg67.TJ."
+    },
+    {
+        "username": "m",
+        "password": "$2y$10$RwnsU\/hcaMNYsg3yvs3Fruqo1p7UmFnP1oLee9HIEeKWMZJP\/g8dW"
     }
 ]

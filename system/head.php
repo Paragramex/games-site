@@ -18,7 +18,7 @@ if(isset($_GET['logout'])){
 		unset($_SESSION['password']);
 		unset($_SESSION['mail']);
 		setcookie("verified", "true", time() - 99999999);
-		echo "<script>window.location.replace('/home.php')</script>"; exit();
+		echo "<script>window.location.replace('/view?page=home')</script>"; exit();
 	}
 $path = $_SERVER['DOCUMENT_ROOT'];
 if (isset($_SESSION['user'])){
@@ -43,12 +43,11 @@ require(dirname(__FILE__) . '/scripts.php');
   <meta name="keywords" content="paragram, games, math, learning, free, game, unblocked, learn, paragram, replit, 3kho, iogames, hacked">
   <meta name="author" content="paragram">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<script src="/system/offline.js" defer></script>
 <link rel="icon" type="image/x-icon" href="<?php if (file_exists($path.'/db/site.json')) {
 			$image = json_decode(file_get_contents($path.'/db/site.json'));
 			echo htmlspecialchars($image->favicon);
 		} ?>">
-	<script src="/system/offline.js" defer></script>
 <link id="theme" rel="stylesheet" type="text/css" href="/assets/style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -63,7 +62,7 @@ require(dirname(__FILE__) . '/scripts.php');
 		} ?></p>
 </div>
 <div class="navbar">
-  <a href="/home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+  <a href="/view?page=home"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
   <a href="/servers.php"><i class="fa fa-server" aria-hidden="true"></i> Servers</a>
   <a href="/relays.php"><i class="fa fa-rss" aria-hidden="true"></i> Relays</a>
 	<!--<a href="/test.php">test account</a>
@@ -74,11 +73,11 @@ require(dirname(__FILE__) . '/scripts.php');
 ?>
 			<a href="?logout" class="right"><i class="fa fa-sign-out" aria-hidden="true"></i>
  Logout</a>
-			<a href="/account.php" class="right" ><i class="fa fa-user" aria-hidden="true"></i> 
+			<a href="/view?page=account" class="right" ><i class="fa fa-user" aria-hidden="true"></i> 
 <?php echo $_SESSION["user"] ?></a>
 <?php }else{ ?>
-     <a href="/login.php" class="right"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-     <a href="/register.php" class="right" ><i class="fa fa-user-plus" aria-hidden="true"></i> 
+     <a href="/view?page=login" class="right"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+     <a href="/view?page=register" class="right" ><i class="fa fa-user-plus" aria-hidden="true"></i> 
 Register</a>
 <?php } ?>
 </div>

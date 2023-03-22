@@ -49,7 +49,9 @@ if ( window !== window.parent )
 {
 	alert("plz open in new tab");
 } */
-	
+
+
+/*
 //Cursor thingy. DONT MESS WITH STUPID
 (function () {
   const defaults = {
@@ -123,4 +125,5 @@ if ( window !== window.parent )
     cursor.style.top = "-100px"
   })
 })()
+*/
 </script>

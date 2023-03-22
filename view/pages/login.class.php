@@ -34,7 +34,7 @@ class LoginUser{
 						$redir = $_GET['redirect'];
 						echo "<script> window.location.replace('/system/portal.php?redirect=$redir')</script>"; exit();
 					} else {
-					echo "<script> window.location.replace('/account.php')</script>"; exit();
+					echo "<script> window.location.replace('/view?page=account')</script>"; exit();
 					}
 				}
 			}

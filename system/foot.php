@@ -6,7 +6,7 @@
 <script src="/assets/clipboard.min.js"></script>
 <script>
 
-	 
+/*	 
 //Cursor thingy. DONT MESS WITH STUPID
 (function () {
   const defaults = {
@@ -76,6 +76,7 @@
     cursor.style.top = "-100px"
   })
 })()
+*/
 	
 	// clipboard.js
 	
@@ -92,7 +93,6 @@
         console.info('Text:', e.text);
         console.info('Trigger:', e.trigger);
       });
-
 </script>
 </body>
 </html>

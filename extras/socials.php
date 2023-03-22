@@ -1,4 +1,4 @@
-~<?php 
+<?php 
 $path = $_SERVER['DOCUMENT_ROOT'];
 require_once($path.'/system/head.php');
 ?>
@@ -14,13 +14,15 @@ require_once($path.'/system/head.php');
 			echo htmlspecialchars_decode($name->disclaimer);
 		} ?></p>
 
-    <a href="/register.php"><button class="extrabuttons button">Register an Account</button></a>
-    <a href="/login.php"><button class="extrabuttons button">Login to an Account</button></a>
+    <a href="/view?page=register"><button class="extrabuttons button">Register an Account</button></a>
+    <a href="/view?page=login"><button class="extrabuttons button">Login to an Account</button></a>
   </div>
   <div class="main">
 		<h3>Social Button Maker [WIP]</h3>
 <input id="userinput" placeholder="your domain name here">
 		<p>The site we will auth to: <i>https://<span id="userinputreflect"></span>/</i></p>
+		<br>
+		<p>Information shared with the target site:</p>
 		<div>
         <input type="radio" name="perms" value="&permissions=mail" id="mail">
         <label for="xs">Email</label>
@@ -35,13 +37,12 @@ require_once($path.'/system/head.php');
     </div>
 		<div>
         <input type="radio" name="perms" value="" id="useremail">
-        <label for="m">None</label>
+        <label for="m">Successful Login (no actual data like username or email)</label>
     </div>
     <p>
         <button id="generate" class="extrabuttons button">Generate my auth url</button>
     </p>
-<p id="destination"></p>
-    <p id="output"></p>
+<span id="destination"></span><span id="output"></span>
 <script>
 var inputBox = document.getElementById('userinput');
 
@@ -54,14 +55,14 @@ const btn = document.querySelector('#generate');
         const radioButtons = document.querySelectorAll('input[name="perms"]');
         btn.addEventListener("click", () => {
             let selectedSize;
-            for (const radioButton of radioButtons~) {
+            for (const radioButton of radioButtons) {
                 if (radioButton.checked) {
                     selectedSize = radioButton.value;
                     break;
                 }
             }
             // show the output:
-            output.innerText = selectedSize ? `${s~electedSize}` : ``;
+            output.innerText = selectedSize ? `${selectedSize}` : ``;
         });
 
 
@@ -69,11 +70,11 @@ const wrapper = document.getElementById('userinput');
 const destination = document.getElementById('destination');
 const button = document.getElementById('generate');
 const encodeDecodeAppend = () => {
-	let dat = wrapper.innerHTML;
+	let dat = userinputreflect.innerHTML;
 	let data = "https://" + dat + "/";
   const encoded = btoa(data); //encoded HTML
   const decoded = atob(encoded); // decoded HTML
-  destination.innerHTML = encoded;
+  destination.innerHTML = 'https://'+window.location.hostname+'/system/auth.php?site='+encoded;
 };
 
 button.addEventListener('click', encodeDecodeAppend);

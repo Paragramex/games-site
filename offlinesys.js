@@ -1,7 +1,7 @@
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 const OFFLINE_VERSION = 1;
-const CACHE_NAME = 'offlinefile';
+const CACHE_NAME = 'offline_webpage (if you are reading this than you must really like inspect element 🤣)';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = '/system/offline.html';
 
@@ -14,6 +14,7 @@ self.addEventListener('install', (event) => {
   })());
   // Force the waiting service worker to become the active service worker.
   self.skipWaiting();
+	console.log('--- ⚙ Site service worker has been installed and forced to become active service worker!  ---')
 });
 
 self.addEventListener('activate', (event) => {
@@ -21,6 +22,7 @@ self.addEventListener('activate', (event) => {
     // Enable navigation preload if it's supported.
     if ('navigationPreload' in self.registration) {
       await self.registration.navigationPreload.enable();
+			console.log('--- ⚙ Site service worker enabling navigation preload if supported... ---')
     }
   })());
 
@@ -48,7 +50,7 @@ self.addEventListener('fetch', (event) => {
         // due to a network error.
         // If fetch() returns a valid HTTP response with a response code in
         // the 4xx or 5xx range, the catch() will NOT be called.
-        console.log('Fetch failed; returning offline page instead.', error);
+        console.log('--- ⚙ Site service worker, fetch failed so we are returning offline page instead.', error);
 
         const cache = await caches.open(CACHE_NAME);
         const cachedResponse = await cache.match(OFFLINE_URL);
